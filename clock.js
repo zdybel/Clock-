@@ -21,7 +21,7 @@ function getZero(i) {
 	return i;
 }
 
-/*function changeImage(i) {
+function changeImage(i) {
 	var image = document.getElementById("img");
 	if (i >= 0 && i < 10){
 		image.style.backgroundImage = "red";
@@ -41,4 +41,4 @@ function getZero(i) {
 	if (i >= 50 && i < 60){
 		image.style.backgroundColor = "purple";
 	}
-}*/
+}
