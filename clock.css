@@ -1,16 +1,40 @@
 #time{
 	display: block;
-	font-size: 52px;
+	font-size: 82px;
 	width: 100%;
 	color: white;
 	text-align: center;
 }
 
 img{
-	display: block;
-	height: 400px;
+	display: inline-block;
 	width: 400px;
+	height: 400px;
 	margin: 0 auto;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
+}
+.greeting{
+	display: inline-block;
+	width: 60%;
+}
+#labelName{
+	font-size: 42px;
+	color: #fefefe;
+	position: fixed;
+	top: 260px;
+	left: 250px;
+}
+#name{
+	height: 28px;
+	font-size: 26px;
+	position: fixed;
+	top: 330px;
+	left: 250px;
+}
+#btn{
+	font-size: 26px;
+	position: fixed;
+	top: 380px;
+	left: 460px;
 }
