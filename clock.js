@@ -18,7 +18,7 @@ function startClock(){
 	second = getZero(second);
 	var color = "#" + hour + minute + second;
 	document.getElementById("clock").style.background = color;
-	document.getElementById("time").innerText = hour + ":" + minute + ":" + second;
+	document.getElementById("time").innerText = hour + ":" + minute;
 	setTimeout(startClock, 500); 
 	changeImage(second);
 }
@@ -127,7 +127,7 @@ function dayPhotos(i){
 		image.style.backgroundImage = "url('http://2.bp.blogspot.com/-QmVOOrO8Z9k/T8UKXqEibnI/AAAAAAAAAv0/ZShOYhfK6b4/s640/Top-10-Best-Nature-Scene-HD-wallpaper-02-beautiful-mountain.jpg')";
 	}
 	if (i >= 10 && i < 20){
-		image.style.backgroundImage = "url(http://www.art-crafts-emporium.com/wp-content/uploads/2015/12/BD-Landscape.jpg)";
+		image.style.backgroundImage = "url('http://www.art-crafts-emporium.com/wp-content/uploads/2015/12/BD-Landscape.jpg')";
 	}
 	if (i >= 20 && i < 30){
 		image.style.backgroundImage = "url('http://images2.fanpop.com/images/photos/6900000/Landscape-national-geographic-6909819-500-375.jpg')";
@@ -140,6 +140,28 @@ function dayPhotos(i){
 	}
 	if (i >= 50 && i < 60){
 		image.style.backgroundImage = "url('http://krstarenja.rs/wp-content/uploads/2016/02/norveski_fjordi1.jpg')";
+	}
+}
+
+function afternoonPhotos(i){
+	var image = document.getElementById("img");
+	if (i >= 0 && i < 10){
+		image.style.backgroundImage = "url('https://s-media-cache-ak0.pinimg.com/564x/69/6d/f4/696df4faee45a6d4bb43ddd5c218a15c.jpg')";
+	}
+	if (i >= 10 && i < 20){
+		image.style.backgroundImage = "url('http://farm6.static.flickr.com/5220/5423423031_0abcf624cc.jpg')";
+	}
+	if (i >= 20 && i < 30){
+		image.style.backgroundImage = "url('http://www.fodors.com/ee/files/slideshows/3-Empire-State-Building.jpg')";
+	}
+	if (i >= 30 && i < 40){
+		image.style.backgroundImage = "url('https://c1.staticflickr.com/1/1/693601_13638a1968_z.jpg?zz=1')";
+	}
+	if (i >= 40 && i < 50){
+		image.style.backgroundImage = "url('https://c1.staticflickr.com/1/380/20347172586_0b0623e521_b.jpg')";
+	}
+	if (i >= 50 && i < 60){
+		image.style.backgroundImage = "url('http://turningpointct.org/wp-content/uploads/2015/06/sunshine1.jpg')";
 	}
 }
 
