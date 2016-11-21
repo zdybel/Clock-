@@ -1,5 +1,12 @@
 startClock();
 
+	var day = new Date();
+	var hour = day.getHours();
+	var minute = day.getMinutes();
+	var second = day.getSeconds();
+	hour = getZero(hour);
+	minute = getZero(minute);
+	second = getZero(second);
 
 function startClock(){
 	var day = new Date();
@@ -50,4 +57,24 @@ function addName(){
 	document.getElementById('greeting').style.display = "inline-block";
 	document.getElementById('input').style.display = "none";
 	document.getElementById('h2Name').innerText = addedName;
+	addGreeting();
+}
+
+function addGreeting(){
+	timeOfDayVar = document.getElementById('timeOfDay');
+	if (hour >= 22 || hour < 5){
+		timeOfDayVar.innerText = "Good night,";
+	}
+	if (hour >= 5 || hour < 10){
+		timeOfDayVar.innerText = "Good morning,";
+	}
+	if (hour >= 10 || hour < 14){
+		timeOfDayVar.innerText = "Good day,";
+	}
+	if (hour >= 14 || hour < 16){
+		timeOfDayVar.innerText = "Good afternoon,";
+	}
+	if (hour >= 16 || hour < 22){
+		timeOfDayVar.innerText = "Good evening,";
+	}
 }
