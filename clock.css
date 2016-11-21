@@ -6,7 +6,7 @@
 	text-align: center;
 }
 
-img{
+#img{
 	display: inline-block;
 	width: 400px;
 	height: 400px;
@@ -14,8 +14,12 @@ img{
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
-.greeting{
+#input{
 	display: inline-block;
+	width: 60%;
+}
+#greeting{
+	display: none;
 	width: 60%;
 }
 #labelName{
@@ -37,4 +41,11 @@ img{
 	position: fixed;
 	top: 380px;
 	left: 460px;
+}
+#h2Name{
+	font-size: 58px;
+	color: #fefefe;
+	position: fixed;
+	top: 350px;
+	left: 400px;
 }

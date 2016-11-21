@@ -16,6 +16,8 @@ function startClock(){
 	changeImage(second);
 }
 
+document.getElementById('btn').addEventListener('click', addName);
+
 function getZero(i) {
 	if (i < 10){i = "0" + i};
 	return i;
@@ -41,4 +43,11 @@ function changeImage(i) {
 	if (i >= 50 && i < 60){
 		image.style.backgroundImage = "url('http://www.space.com/images/i/000/019/091/original/july-skywatching-portland.jpg?interpolation=lanczos-none&downsize=*:1000')";
 	}
+}
+
+function addName(){
+	var addedName = document.getElementById('name').value;
+	document.getElementById('greeting').style.display = "inline-block";
+	document.getElementById('input').style.display = "none";
+	document.getElementById('h2Name').innerText = addedName;
 }
