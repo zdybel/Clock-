@@ -19,8 +19,8 @@ function startClock(){
 	var color = "#" + hour + minute + second;
 	document.getElementById("clock").style.background = color;
 	document.getElementById("time").innerText = hour + ":" + minute;
-	setTimeout(startClock, 500); 
 	changeImage(second);
+	setTimeout(startClock, 500); 
 }
 
 document.getElementById('btn').addEventListener('click', addName);
