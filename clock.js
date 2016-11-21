@@ -32,20 +32,26 @@ function getZero(i) {
 
 function changeImage(i) {
 	var image = document.getElementById("img");
+	var timeOfDayVar = document.getElementById('timeOfDay');
 	if (hour >= 22 || hour < 5){
 		nightPhotos(i);
+		timeOfDayVar.innerText = "Good night,";
 	}
 	if (hour >= 5 && hour < 10){
 		morningPhotos(i);
+		timeOfDayVar.innerText = "Good morning,";
 	}
 	if (hour >= 10 && hour < 14){
 		dayPhotos(i);
+		timeOfDayVar.innerText = "Good day,";
 	}
 	if (hour >= 14 && hour < 16){
 		afternoonPhotos(i);
+		timeOfDayVar.innerText = "Good afternoon,";
 	}
 	if (hour >= 16 && hour < 22){
 		eveningPhotos(i);
+		timeOfDayVar.innerText = "Good evening,";
 	}
 }
 
@@ -54,27 +60,8 @@ function addName(){
 	document.getElementById('greeting').style.display = "inline-block";
 	document.getElementById('input').style.display = "none";
 	document.getElementById('h2Name').innerText = addedName;
-	addGreeting();
 }
 
-function addGreeting(){
-	timeOfDayVar = document.getElementById('timeOfDay');
-	if (hour >= 22 || hour < 5){
-		timeOfDayVar.innerText = "Good night,";
-	}
-	if (hour >= 5 && hour < 10){
-		timeOfDayVar.innerText = "Good morning,";
-	}
-	if (hour >= 10 && hour < 14){
-		timeOfDayVar.innerText = "Good day,";
-	}
-	if (hour >= 14 && hour < 16){
-		timeOfDayVar.innerText = "Good afternoon,";
-	}
-	if (hour >= 16 && hour < 22){
-		timeOfDayVar.innerText = "Good evening,";
-	}
-}
 
 function nightPhotos(i){
 	var image = document.getElementById("img");
