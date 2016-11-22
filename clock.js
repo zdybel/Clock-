@@ -1,12 +1,6 @@
 startClock();
 
-	var day = new Date();
-	var hour = day.getHours();
-	var minute = day.getMinutes();
-	var second = day.getSeconds();
-	hour = getZero(hour);
-	minute = getZero(minute);
-	second = getZero(second);
+
 
 function startClock(){
 	var day = new Date();
@@ -16,50 +10,55 @@ function startClock(){
 	hour = getZero(hour);
 	minute = getZero(minute);
 	second = getZero(second);
+	var timeArray = [hour, minute, second];
 	var color = "#" + hour + minute + second;
 	document.getElementById("clock").style.background = color;
-	document.getElementById("time").innerText = hour + ":" + minute;
-	changeImage(second);
+	document.getElementById("time").innerText = hour + ":" + minute + ":" + second;
+	//changeImage(timeArray);
+	//changeImage(second);
+	changeGreeting(timeArray);
 	setTimeout(startClock, 500); 
 }
 
+
 document.getElementById('btn').addEventListener('click', addName);
-
-function getZero(i) {
-	if (i < 10){i = "0" + i};
-	return i;
-}
-
-function changeImage(i) {
-	var image = document.getElementById("img");
-	var timeOfDayVar = document.getElementById('timeOfDay');
-	if (hour >= 22 || hour < 5){
-		nightPhotos(i);
-		timeOfDayVar.innerText = "Good night,";
-	}
-	if (hour >= 5 && hour < 10){
-		morningPhotos(i);
-		timeOfDayVar.innerText = "Good morning,";
-	}
-	if (hour >= 10 && hour < 14){
-		dayPhotos(i);
-		timeOfDayVar.innerText = "Good day,";
-	}
-	if (hour >= 14 && hour < 16){
-		afternoonPhotos(i);
-		timeOfDayVar.innerText = "Good afternoon,";
-	}
-	if (hour >= 16 && hour < 22){
-		eveningPhotos(i);
-		timeOfDayVar.innerText = "Good evening,";
-	}
-}
 
 function addName(){
 	var addedName = document.getElementById('name').value;
 	document.getElementById('greeting').style.display = "inline-block";
 	document.getElementById('input').style.display = "none";
 	document.getElementById('h2Name').innerText = addedName;
+}
+
+function getZero(i) {
+	if (i < 10){i = "0" + i};
+	return i;
+}
+
+ function changeGreeting(i){
+ 	var greeting = document.getElementById('timeOfDay');
+ 	switch(true){
+ 		case (i[0] > 22 || i[0] < 5):
+ 			greeting.innerText= "Good night,";
+ 			nightPhotos(i[2]);
+ 			break;
+ 		case (i[0] >= 5 && i[0] < 10):
+ 			greeting.innerText= "Good morning,";
+ 			morningPhotos(i[2]);
+ 			break;
+ 		case (i[0] >= 10 && i[0] < 14):
+ 			greeting.innerText= "Good day,";
+ 			dayPhotos(i[2]);
+ 			break;
+ 		case (i[0] >= 14 && i[0] < 16):
+ 			greeting.innerText= "Good afternoon,";
+ 			afternoonPhotos(i[2]);
+ 			break;
+ 		case (i[0] >= 16 && i[0] < 22):
+ 			greeting.innerText= "Good evening,";
+ 			eveningPhotos(i[2]);
+ 			break;
+ 	}
 }
 
 
@@ -102,7 +101,7 @@ function morningPhotos(i){
 	if (i >= 40 && i < 50){
 		image.style.backgroundImage = "url('https://c6.staticflickr.com/3/2427/3919161197_0f1f4f9944_b.jpg')";
 	}
-	if (i >= 50 && i < 60){
+	if (i >= 50 && i < 59){
 		image.style.backgroundImage = "url('https://media-cdn.tripadvisor.com/media/photo-s/02/2a/a6/31/sunrise-on-tiger-hill.jpg')";
 	}
 }
@@ -173,3 +172,4 @@ function eveningPhotos(i){
 		image.style.backgroundImage = "url('http://danieljknaggs.com/wp-content/uploads/2014/05/sunset-on-the-missouri-river.jpg')";
 	}
 }
+
