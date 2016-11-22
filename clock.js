@@ -22,12 +22,20 @@ function startClock(){
 
 
 document.getElementById('btn').addEventListener('click', addName);
+document.getElementById('counterBtn').addEventListener('click', reAddName);
 
 function addName(){
 	var addedName = document.getElementById('name').value;
 	document.getElementById('greeting').style.display = "inline-block";
 	document.getElementById('input').style.display = "none";
 	document.getElementById('h2Name').innerText = addedName;
+	document.getElementById('counterName').innerText = addedName;
+}
+
+function reAddName(){
+	document.getElementById('greeting').style.display = "none";
+	document.getElementById('input').style.display = "inline-block";
+	document.getElementById('name').value = "";
 }
 
 function getZero(i) {
